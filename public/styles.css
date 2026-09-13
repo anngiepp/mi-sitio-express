@@ -12,21 +12,18 @@
 body {
     font-family: 'Nunito', sans-serif;
     background-color: var(--fondo);
-    text-align: center;
-    margin: 0;
-    padding: 60px 20px;
     background-image: radial-gradient(var(--rosa-suave) 15%, transparent 16%),
                        radial-gradient(var(--rosa-suave) 15%, transparent 16%);
     background-size: 60px 60px;
     background-position: 0 0, 30px 30px;
 }
 
-h1 {
+h1, h3 {
     font-family: 'Fredoka', sans-serif;
     color: var(--verde-oscuro);
-    font-size: 2.2rem;
-    margin-bottom: 30px;
 }
+
+/* --- home y about (páginas sin Materialize) --- */
 
 .contenedor {
     background-color: var(--blanco);
@@ -45,7 +42,7 @@ nav {
     margin-top: 25px;
 }
 
-a {
+nav a {
     text-decoration: none;
     color: var(--blanco);
     background-color: var(--verde);
@@ -55,7 +52,88 @@ a {
     transition: background-color 0.2s, transform 0.2s;
 }
 
-a:hover {
+nav a:hover {
     background-color: var(--rosa);
     transform: translateY(-2px);
+}
+
+/* --- override de Materialize para contact, admin, movies, 404 --- */
+
+.container {
+    max-width: 700px;
+    margin-top: 40px;
+}
+
+/* Botón principal (Enviar, Guardar) */
+.btn {
+    background-color: var(--verde) !important;
+    border-radius: 50px !important;
+    text-transform: none !important;
+    font-weight: 600;
+    box-shadow: none !important;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--verde-oscuro) !important;
+    transform: translateY(-2px);
+}
+
+/* Botón secundario (Volver, Inicio) como contorno en vez de gris sólido */
+.btn.grey {
+    background-color: transparent !important;
+    border: 2px solid var(--verde) !important;
+    color: var(--verde-oscuro) !important;
+}
+
+.btn.grey:hover {
+    background-color: var(--rosa-suave) !important;
+}
+
+/* Inputs: la línea inferior y el label toman el color del tema */
+.input-field input:focus + label,
+.input-field textarea:focus + label {
+    color: var(--verde-oscuro) !important;
+}
+
+.input-field input:focus,
+.input-field textarea:focus {
+    border-bottom: 1px solid var(--verde) !important;
+    box-shadow: 0 1px 0 0 var(--verde) !important;
+}
+
+/* Tarjeta blanca de fondo para que el form no flote sobre el patrón */
+.container form {
+    background-color: var(--blanco);
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(79, 107, 69, 0.1);
+}
+
+/* Lista de mensajes (admin) */
+.collection {
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+
+.collection-item {
+    border-bottom: 1px solid var(--rosa-suave) !important;
+}
+
+/* Tabla de películas */
+table.striped > tbody > tr:nth-child(odd) {
+    background-color: var(--rosa-suave);
+}
+
+thead {
+    background-color: var(--verde);
+}
+
+thead th {
+    color: var(--blanco) !important;
+}
+
+/* Página 404 */
+.red-text {
+    color: var(--rosa) !important;
 }
