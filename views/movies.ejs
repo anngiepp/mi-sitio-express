@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Películas</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+
+</head>
+
+<body class="container">
+
+<h3 class="center-align">
+Registro de Películas
+</h3>
+
+<form action="/movies" method="POST">
+
+<div class="input-field">
+<input type="text" name="titulo" required>
+<label>Título</label>
+</div>
+
+<div class="input-field">
+<input type="text" name="genero" required>
+<label>Género</label>
+</div>
+
+<div class="input-field">
+<input type="text" name="director" required>
+<label>Director</label>
+</div>
+
+<div class="input-field">
+<input type="number" name="anio" required>
+<label>Año</label>
+</div>
+
+<div class="input-field">
+<input type="number" name="puntuacion" required>
+<label>Puntuación</label>
+</div>
+
+<button class="btn" type="submit">
+Guardar
+</button>
+
+<a href="/" class="btn grey">
+Inicio
+</a>
+
+</form>
+
+<table class="striped">
+
+<thead>
+
+<tr>
+
+<th>Título</th>
+
+<th>Género</th>
+
+<th>Director</th>
+
+<th>Año</th>
+
+<th>Puntuación</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<% peliculas.forEach(p=>{ %>
+
+<tr>
+
+<td><%= p.titulo %></td>
+
+<td><%= p.genero %></td>
+
+<td><%= p.director %></td>
+
+<td><%= p.anio %></td>
+
+<td><%= p.puntuacion %></td>
+
+</tr>
+
+<% }) %>
+
+</tbody>
+
+</table>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+
+</html>
