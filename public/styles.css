@@ -12,6 +12,7 @@
 body {
     font-family: 'Nunito', sans-serif;
     background-color: var(--fondo);
+    text-align: center;
     background-image: radial-gradient(var(--rosa-suave) 15%, transparent 16%),
                        radial-gradient(var(--rosa-suave) 15%, transparent 16%);
     background-size: 60px 60px;
@@ -136,4 +137,11 @@ thead th {
 /* Página 404 */
 .red-text {
     color: var(--rosa) !important;
+}
+
+.acento {
+    color: var(--rosa);
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 0 0 20px 0;
 }
